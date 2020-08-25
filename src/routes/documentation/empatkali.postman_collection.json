@@ -1,0 +1,189 @@
+{
+	"info": {
+		"_postman_id": "a62387f0-ff48-4d74-903d-8b25f319d6ac",
+		"name": "empatkali",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get all rides",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-auth",
+						"value": "gGnyWtx21ztdIsxGG8CFxSPy7u",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8010/api/rides",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"api",
+						"rides"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get ride by id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-auth",
+						"value": "gGnyWtx21ztdIsxGG8CFxSPy7u",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8010/api/ride/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"api",
+						"ride",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "save ride",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-auth",
+						"value": "gGnyWtx21ztdIsxGG8CFxSPy7u",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"rider_name\": \"ardian\",\n    \"driver_name\": \"anugerahanto\",\n    \"driver_vehicle\": \"Porche\",\n    \"start_lat\": 100,\n    \"start_long\": 100,\n    \"end_lat\": 100,\n    \"end_long\": 100\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8010/api/rides",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"api",
+						"rides"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update ride",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-auth",
+						"value": "gGnyWtx21ztdIsxGG8CFxSPy7u",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"rider_name\": \"ardian\",\n    \"driver_name\": \"anugerahanto\",\n    \"driver_vehicle\": \"Porche\",\n    \"start_lat\": 100,\n    \"start_long\": 100,\n    \"end_lat\": 100,\n    \"end_long\": 100\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8010/api/ride/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"api",
+						"ride",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete ride",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-auth",
+						"value": "gGnyWtx21ztdIsxGG8CFxSPy7u",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8010/api/ride/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"api",
+						"ride",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

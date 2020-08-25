@@ -1,0 +1,13 @@
+{
+    "apps": [
+        {
+            "name": "empatkali",
+            "script": "index.js",
+            "env": {
+                "NODE_ENV": "production",
+                "NODE_PATH": "."
+            },
+            "log_date_format": "YYYY-DD-MM HH:mm:ss.SSS"
+        }
+    ]
+}
