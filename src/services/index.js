@@ -5,6 +5,7 @@ import {
   edit,
   del
 } from '../repositories'
+import Paging from '../lib/paging'
 
 export const read = async (payload = {}) => {
   let {
@@ -23,10 +24,15 @@ export const read = async (payload = {}) => {
     sort: sort,
     dir: dir
   })
+  const paging = new Paging({
+    count: data.count,
+    pagenum: pagenum,
+    end: end
+  }).pagination
   return {
     msg: data.count > 0 ? 'found' : 'not found',
     res: data.rows,
-    count: data.total
+    page: paging
   }
 }
 

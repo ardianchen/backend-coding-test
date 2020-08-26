@@ -5,7 +5,7 @@ import r from '../lib/resjson'
 export const read = async (req, res) => {
   const { params, query } = req
   const data = await service.read({ params: params, query: query })
-  const response = r(data.msg, data.res, data.count)
+  const response = r(data.msg, data.res, data.page)
   res.status(status.OK).json(response)
 }
 
