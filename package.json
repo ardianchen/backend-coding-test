@@ -14,7 +14,8 @@
     "test": "NODE_ENV=development nyc mocha --require babel-register --require babel-polyfill",
     "coverage": "nyc --reporter=lcov --reporter=text-lcov npm test",
     "sequelize": "sequelize --options-path=src/database/options.js",
-    "prepush": "yarn lint && yarn test && yarn coverage"
+    "prepush": "yarn lint && yarn test && yarn coverage",
+    "test:load": "artillery run hello.yml"
   },
   "husky": {
     "hooks": {
