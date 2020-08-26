@@ -1,4 +1,13 @@
 {
+  "include": [
+    "**/*.js",
+    "./*.js"
+  ],
+  "exclude": [
+    "**/node_modules/**",
+    "**/test/**",
+    "**/coverage/**"
+  ],
   "check-coverage": true,
   "branches": 80,
   "lines": 80,
