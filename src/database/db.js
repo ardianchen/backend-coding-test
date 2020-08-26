@@ -5,7 +5,7 @@ import config from './config'
 module.exports = (() => {
   return new Sequelize(
     process.env.SQL_DATABASENAME || 'empatkali',
-    process.env.SQL_USER || 'admin',
+    process.env.SQL_USER || 'root',
     process.env.SQL_PASSWORD || 'password',
     config
   )
