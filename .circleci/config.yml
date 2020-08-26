@@ -1,14 +1,19 @@
 version: 2.1
+jobs:
+  run_tests:
+    docker:
+      - image: circleci/node:10
+    steps:
+      - checkout
+      - run:
+          name: install dependecies
+          command: |
+            npm install --save
+      - run:
+          name: run test
+          command: |
+            yarn test
 workflows:
-  docker:
-    - image: circleci/node:10
-  steps:
-    - checkout
-    - run:
-        name: install dependecies
-        command: |
-          npm install --save
-    - run:
-        name: run test
-        command: |
-          yarn test
+  build_test:
+    jobs:
+      -run_tests
