@@ -5,6 +5,7 @@ import {
   edit,
   del
 } from '../repositories'
+import Paging from '../lib/paging'
 
 export const read = async (payload = {}) => {
   let {
@@ -23,10 +24,17 @@ export const read = async (payload = {}) => {
     sort: sort,
     dir: dir
   })
+  // you can use data count row if use client pagination just use 'data.count'
+  // and you can use this function if pagination will be handle in backend.
+  const paging = new Paging({
+    count: data.count,
+    pagenum: pagenum,
+    end: end
+  }).pagination
   return {
     msg: data.count > 0 ? 'found' : 'not found',
     res: data.rows,
-    count: data.total
+    page: paging
   }
 }
 

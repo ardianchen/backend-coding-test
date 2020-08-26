@@ -1,4 +1,4 @@
-import { HttpError, UnprocessableEntityError } from 'src/errors/http'
+import { HttpError, UnprocessableEntityError } from '../errors/http'
 
 export default function errorToResponse () {
   return (err, req, res, next) => {

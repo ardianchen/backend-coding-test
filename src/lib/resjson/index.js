@@ -1,4 +1,4 @@
-export default (message, res, total) => {
+export default (message, res, page) => {
   const response = {}
 
   if (message) {
@@ -9,8 +9,8 @@ export default (message, res, total) => {
     response.result = res
   }
 
-  if (total >= 0) {
-    response.total = total
+  if (page) {
+    response.page = page
   }
 
   return response
