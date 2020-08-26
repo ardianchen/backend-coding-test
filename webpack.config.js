@@ -1,8 +1,10 @@
 const { join, resolve } = require('path')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const nodeExternals = require('webpack-node-externals')
+const mode = process.env.NODE_ENV
 
 module.exports = {
+  mode,
   entry: resolve(__dirname, './src/index.js'),
 
   output: {

@@ -31,7 +31,7 @@ Server run on port 8010
 ### Build and run production
 
 ```bash
-$ yarn build && yarn start / npm run build && npm run start
+$ yarn prod / npm run prod
 ```
 
 ### Run test

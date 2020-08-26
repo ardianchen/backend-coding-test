@@ -1,5 +1,14 @@
+// class paging
+// param :
+//        - count
+//        - pagenum
+//        - end
+// return (object)
 class Paging {
   constructor (data) {
+    if (data === undefined) {
+      return new TypeError()
+    }
     const { count, pagenum, end } = data
     this.count = count
     this.pagenum = pagenum

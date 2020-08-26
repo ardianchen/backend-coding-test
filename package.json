@@ -13,10 +13,8 @@
     "lint": "eslint src test",
     "test": "NODE_ENV=development nyc mocha --require babel-register --require babel-polyfill",
     "coverage": "nyc --reporter=lcov --reporter=text-lcov npm test",
-    "sequelize": "sequelize --options-path=src/database/options.js"
-  },
-  "prepush": {
-    "run": "lint, dev"
+    "sequelize": "sequelize --options-path=src/database/options.js",
+    "prepush": "yarn lint && yarn test && yarn coverage"
   },
   "husky": {
     "hooks": {
@@ -36,6 +34,8 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-0": "^6.0.15",
     "babel-register": "^6.26.0",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
     "clean-webpack-plugin": "^0.1.17",
     "eslint": "^6.6.0",
     "eslint-config-standard": "^14.1.0",
@@ -43,33 +43,33 @@
     "eslint-plugin-node": "^10.0.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
+    "husky": "^4.2.5",
+    "mocha": "^8.1.1",
     "nodemon": "^1.19.4",
+    "nyc": "^15.1.0",
+    "pre-push": "^0.1.1",
     "sequelize-cli": "^5.5.1",
     "supertest": "^4.0.2",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
     "webpack-messages": "^2.0.4",
-    "webpack-node-externals": "^1.7.2"
+    "webpack-node-externals": "^1.7.2",
+    "winston": "^3.3.3"
   },
   "dependencies": {
     "@babel/preset-env": "^7.11.0",
     "@babel/runtime": "^7.11.2",
+    "artillery": "^1.6.1",
     "body-parser": "^1.19.0",
-    "chai": "^4.2.0",
-    "chai-http": "^4.3.0",
     "dotenv": "^8.2.0",
     "es6-error": "^4.1.1",
     "express": "^4.17.1",
     "http-status": "^1.4.0",
     "method-override": "^3.0.0",
-    "mocha": "^8.1.1",
     "moment": "^2.24.0",
     "morgan": "^1.10.0",
     "mysql2": "^2.1.0",
-    "nyc": "^15.1.0",
-    "pre-push": "^0.1.1",
     "sequelize": "^6.3.4",
-    "validatorjs": "^3.13.6",
-    "winston": "^3.3.3"
+    "validatorjs": "^3.13.6"
   }
 }

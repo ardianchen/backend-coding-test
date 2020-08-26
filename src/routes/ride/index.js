@@ -1,6 +1,6 @@
 import express from 'express'
-import * as rides from 'src/controllers'
-import { inputValidation } from 'src/middlewares'
+import * as rides from '../../controllers'
+import { inputValidation } from '../../middlewares'
 import * as validations from './validations'
 
 const router = express.Router()
@@ -13,7 +13,7 @@ router.route('/rides')
     inputValidation(validations.post),
     rides.post
   )
-router.route('/ride:id')
+router.route('/ride/:id')
   .get(
     rides.detail
   )

@@ -24,6 +24,8 @@ export const read = async (payload = {}) => {
     sort: sort,
     dir: dir
   })
+  // you can use data count row if use client pagination just use 'data.count'
+  // and you can use this function if pagination will be handle in backend.
   const paging = new Paging({
     count: data.count,
     pagenum: pagenum,

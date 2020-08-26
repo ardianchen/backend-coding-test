@@ -37,6 +37,8 @@ export const del = async (payload = {}) => {
 }
 export const findOne = async (payload = {}) => {
   return await ride.findOne({
-    rideID: payload.id
+    where: {
+      rideID: payload.id
+    }
   })
 }
