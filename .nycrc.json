@@ -6,6 +6,7 @@
   "exclude": [
     "**/node_modules/**",
     "**/test/**",
+    "**/src/errors/**",
     "**/coverage/**"
   ],
   "check-coverage": true,

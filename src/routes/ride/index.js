@@ -18,6 +18,7 @@ router.route('/ride/:id')
     rides.detail
   )
   .put(
+    inputValidation(validations.post),
     rides.update
   )
   .delete(
