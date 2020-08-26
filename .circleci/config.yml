@@ -9,7 +9,7 @@ jobs:
         name: install dependensi
         command: |
           npm install --save
-      - run: 
+      - run:
         name: run test
         command: |
           yarn test
