@@ -1,0 +1,26 @@
+config:
+  target: 'http://localhost:8010'
+  phases:
+    - duration: 60
+      arrivalRate: 100
+    - duration: 60
+      arrivalRate: 10
+  defaults:
+    headers:
+      x-auth: 'gGnyWtx21ztdIsxGG8CFxSPy7u'
+scenarios:
+  - name: "Search and buy"
+    flow:
+      - get:
+          url: "/api/rides"
+      - post:
+            url: "/api/rides"
+            json:
+              rider_name: "ardian"
+              driver_name: "anugerahanto"
+              driver_vehicle: "Porche"
+              start_lat: 100
+              start_long: 100
+              end_lat: 100
+              end_long: 100
+    
