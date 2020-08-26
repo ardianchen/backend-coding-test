@@ -16,7 +16,7 @@ jobs:
           name: install dependecies
           command: |
             yarn install --save
-      -run:
+      - run:
           name: Waiting for MySQL to be ready
           command: |
             for i in `seq 1 10`;
