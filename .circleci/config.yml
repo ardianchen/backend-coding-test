@@ -5,14 +5,15 @@ jobs:
       - image: circleci/node:10
     working_directory: ~/repo
     steps:
+      - checkout
       - run:
           name: install dependecies
           command: |
-            npm install --save
+            yarn install --save
       - run:
           name: run test
           command: |
-            npm run test
+            yarn test
 workflows:
   build_test:
     jobs:
