@@ -8,15 +8,16 @@ $ cp .env.example .env
 
 Edit the with your config 
 
-### Install packages
-
-```bash
-$ yarn
-```
 ### migration and config db
 
 ``` bash
 $ yarn sequelize db:migrate
+```
+
+### Install packages
+
+```bash
+$ yarn
 ```
 
 ### Run
@@ -25,7 +26,7 @@ $ yarn sequelize db:migrate
 $ yarn dev
 ```
 
-Server run on port 3000
+Server run on port 8010
 
 ### Build and run production
 
