@@ -50,14 +50,21 @@ export const insert = async (payload = {}) => {
 export const update = async (payload = {}) => {
   const res = await edit({
     id: payload.params.id,
-    body: payload.body
+    body: {
+      startLat: payload.body.start_lat,
+      startLong: payload.body.start_long,
+      endLat: payload.body.end_lat,
+      endLong: payload.body.end_long,
+      riderName: payload.body.rider_name,
+      driverName: payload.body.driver_name,
+      driverVehicle: payload.body.driver_vehicle
+    }
   })
   return { msg: res === 1 ? 'success' : 'fail' }
 }
 export const remove = async (payload = {}) => {
   const res = await del({
-    id: payload.params.id,
-    body: payload.body
+    id: payload.params.id
   })
   return { msg: res === 1 ? 'success' : 'fail' }
 }

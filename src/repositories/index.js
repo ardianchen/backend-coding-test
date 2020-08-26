@@ -12,10 +12,10 @@ export const find = async (payload = {}) => {
   return data
 }
 export const create = async (payload = {}) => {
-  const data = await ride.create(payload)
-  if (data) {
+  try {
+    await ride.create(payload)
     return 1
-  } else {
+  } catch (error) {
     return 0
   }
 }
