@@ -3,6 +3,12 @@ jobs:
   run_tests:
     docker:
       - image: circleci/node:10
+      - image: circleci/mysql:8.0.4
+        environment:
+          MYSQL_ROOT_PASSWORD: rootpw
+          MYSQL_DATABASE: test_db
+          MYSQL_USER: admin
+          MYSQL_PASSWORD: password
     working_directory: ~/repo
     steps:
       - checkout
