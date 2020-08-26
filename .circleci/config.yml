@@ -3,12 +3,7 @@ jobs:
   run_tests:
     docker:
       - image: circleci/node:10
-      - image: circleci/mysql:8.0.4
-        environment:
-          MYSQL_ROOT_PASSWORD: rootpw
-          MYSQL_DATABASE: empatkali
-          MYSQL_USER: admin
-          MYSQL_PASSWORD: password
+      - image: circleci/mariadb:bionic
     working_directory: ~/repo
     steps:
       - checkout
@@ -16,22 +11,6 @@ jobs:
           name: install dependecies
           command: |
             yarn install --save
-      - run:
-          name: Waiting for MySQL to be ready
-          command: |
-            for i in `seq 1 10`;
-            do
-              nc -z 127.0.0.1 3306 && echo Success && exit 0
-              echo -n .
-              sleep 1
-            done
-            echo Failed waiting for MySQL && exit 1
-      - run:
-          name: Install MySQL CLI; Import dummy data; run an example query
-          command: |
-            sudo apt-get install default-mysql-client
-            mysql -h 127.0.0.1 -u admin -password empatkali < sql-data/dummy.sql
-            mysql -h 127.0.0.1 -u admin -password --execute="SELECT * FROM empatkali.Persons"
       - run:
           name: run test
           command: |
