@@ -13,8 +13,16 @@
     "lint": "eslint src test",
     "test": "NODE_ENV=development nyc mocha --require babel-register --require babel-polyfill",
     "coverage": "nyc --reporter=lcov --reporter=text-lcov npm test",
-    "pre-push": "foo, bar, test",
     "sequelize": "sequelize --options-path=src/database/options.js"
+  },
+  "prepush": {
+    "run": "lint, dev"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test",
+      "pre-push": "npm test"
+    }
   },
   "devDependencies": {
     "@babel/plugin-transform-runtime": "^7.11.0",
