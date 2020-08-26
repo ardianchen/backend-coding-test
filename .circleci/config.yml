@@ -9,10 +9,10 @@ jobs:
         name: install dependensi
         command: |
           npm install --save
-        # run tests!
-      - run: yarn test
-        # run dev!
-        # - run: yarn dev
+      - run: 
+        name: run test
+        command: |
+          yarn test
 workflows:
   build_test:
     jobs:
