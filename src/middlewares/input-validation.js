@@ -1,4 +1,4 @@
-import { UnprocessableEntityError } from 'src/errors/http'
+import { UnprocessableEntityError } from '../errors/http'
 
 export default function inputValidation (validationFactory) {
   return (req, res, next) => {
