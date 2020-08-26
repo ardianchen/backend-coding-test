@@ -7,15 +7,12 @@ jobs:
       - image: circleci/node:10
     steps:
       - checkout
-
       - run: 
         name: install dependensi
         command: |
           npm install --save 
-
       # run tests!
        - run: yarn test
-
       # run dev!
       # - run: yarn dev
 workflows:
