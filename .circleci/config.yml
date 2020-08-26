@@ -2,18 +2,17 @@ version: 2.1
 jobs:
   run_tests:
     docker:
-      # specify the version you desire here
       - image: circleci/node:10
-      steps:
-        - checkout
-        - run:
-          name: install dependensi
-          command: |
-            npm install --save
-          # run tests!
-        - run: yarn test
-          # run dev!
-          # - run: yarn dev
+    steps:
+      - checkout
+      - run:
+        name: install dependensi
+        command: |
+          npm install --save
+        # run tests!
+      - run: yarn test
+        # run dev!
+        # - run: yarn dev
 workflows:
   build_test:
     jobs:
