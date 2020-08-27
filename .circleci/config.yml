@@ -4,6 +4,10 @@ jobs:
     docker:
       - image: circleci/node:10
       - image: circleci/mariadb:bionic
+        environment:
+          - MYSQL_DATABASE: empatkali
+          - MYSQL_USER: root
+          - MYSQL_PASSWORD: password
     working_directory: ~/repo
     steps:
       - checkout
