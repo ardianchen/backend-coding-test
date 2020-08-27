@@ -7,6 +7,7 @@ jobs:
         environment:
           - MYSQL_ROOT_PASSWORD: password
           - MYSQL_DATABASE: empatkali
+          - MYSQL_USER: admin
           - MYSQL_PASSWORD: password
     working_directory: ~/repo
     steps:
