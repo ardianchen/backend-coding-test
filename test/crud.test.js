@@ -5,52 +5,9 @@
 /* eslint-disable no-undef */
 import chai from 'chai'
 import chaiHttp from 'chai-http'
-// import Sequelize from 'sequelize'
-import Paging from '../src/lib/paging'
 
 import app from '../src/app'
 chai.use(chaiHttp)
-
-// function
-describe('test paging function', () => {
-  it('paging return', async () => {
-    const page = new Paging({
-      count: 200,
-      pagenum: 6,
-      end: 6
-    }).pagination
-    chai.expect(page).to.be.a('object')
-    chai.expect(page).to.have.property('count_item').to.equal(200)
-    chai.expect(page).to.have.property('countpage').to.equal(34)
-    chai.expect(page).to.have.property('first_page').to.be.true
-    chai.expect(page).to.have.property('last_page').to.be.true
-    chai.expect(page).to.have.property('detail').to.be.a('string')
-  })
-  it('paging return first', async () => {
-    const page = new Paging({
-      count: 10,
-      pagenum: 1,
-      end: 5
-    }).pagination
-    chai.expect(page).to.have.property('countpage').to.equal(2)
-  })
-  it('paging return last', async () => {
-    const page = new Paging({
-      count: 10,
-      pagenum: 2,
-      end: 5
-    }).pagination
-    chai.expect(page).to.have.property('countpage').to.equal(2)
-  })
-  it('should throw an error', async () => {
-    const page = new Paging().pagination
-    chai.expect(page).to.be.undefined
-  })
-  it('should throw an error', async () => {
-    const page = new Paging({}).pagination
-    chai.expect(page).to.be.a('object')
-  })
-})
 
 describe('API Testing', () => {
   it('it should not found', (done) => {
@@ -99,18 +56,7 @@ describe('API Testing', () => {
       .end((err, res) => {
         chai.expect(res).to.have.status(200)
         chai.expect(res).to.be.a('object')
-        chai.expect(res.body.message).to.be.equal('success')
-      })
-    done()
-  })
-  it('it should success to retrive one data with not found', (done) => {
-    chai.request(app)
-      .get('/api/ride/100')
-      .set('x-auth', 'gGnyWtx21ztdIsxGG8CFxSPy7u')
-      .end((err, res) => {
-        chai.expect(res).to.have.status(200)
-        chai.expect(res).to.be.a('object')
-        chai.expect(res.body.message).to.be.equal('success')
+        chai.expect(res.body.message).to.be.equal('found')
       })
     done()
   })
@@ -170,27 +116,7 @@ describe('API Testing', () => {
       .end((err, res) => {
         chai.expect(res).to.have.status(201)
         chai.expect(res).to.be.a('object')
-        chai.expect(res.body.message).to.be.equal('fail')
-      })
-    done()
-  })
-  it('it should success update data', (done) => {
-    chai.request(app)
-      .put('/api/ride/1')
-      .set('x-auth', 'gGnyWtx21ztdIsxGG8CFxSPy7u')
-      .send({
-        rider_name: 'ardian',
-        driver_name: '',
-        driver_vehicle: '',
-        start_lat: 100,
-        start_long: 100,
-        end_lat: 100,
-        end_long: 100
-      })
-      .end((err, res) => {
-        chai.expect(res).to.have.status(422)
-        chai.expect(res).to.be.a('object')
-        chai.expect(res.body.message).to.be.equal('Cannot process your request')
+        chai.expect(res.body.message).to.be.equal('success')
       })
     done()
   })
