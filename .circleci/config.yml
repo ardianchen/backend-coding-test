@@ -3,7 +3,7 @@ jobs:
   run_tests:
     docker:
       - image: circleci/node:10
-      - image: circleci/mariadb:bionic
+      - image: circleci/mysql:8.0.4
         environment:
           - MYSQL_ROOT_PASSWORD: password
           - MYSQL_DATABASE: empatkali
