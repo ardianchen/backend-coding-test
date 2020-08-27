@@ -147,7 +147,7 @@ describe('API Testing', () => {
       .end((err, res) => {
         chai.expect(res).to.have.status(201)
         chai.expect(res).to.be.a('object')
-        chai.expect(res.body.message).to.be.equal('fail')
+        chai.expect(res.body.message).to.be.equal('success')
       })
     done()
   })

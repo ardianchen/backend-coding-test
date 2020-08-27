@@ -2,8 +2,8 @@ module.exports = {
   host: process.env.SQL_URL || 'localhost',
   dialect: process.env.SQL_DIALECT || 'mysql',
   database: process.env.SQL_DATABASENAME || 'empatkali',
-  username: process.env.SQL_USER || 'root',
-  password: process.env.SQL_PASSWORD || 'new-password',
+  username: process.env.SQL_USER || 'admin',
+  password: process.env.SQL_PASSWORD || 'password',
   pool: {
     max: 5,
     min: 0,

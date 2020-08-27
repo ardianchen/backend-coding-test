@@ -3,14 +3,22 @@ jobs:
   run_tests:
     docker:
       - image: circleci/node:10
-      - image: circleci/mariadb:bionic
-    working_directory: ~/repo
+      - image: circleci/mariadb:10.2
+        environment:
+          - MYSQL_DATABASE: empatkali
+          - MYSQL_USER: admin
+          - MYSQL_PASSWORD: password
+    working_directory: ~/my_repo
     steps:
       - checkout
       - run:
           name: install dependecies
           command: |
             yarn install --save
+      - run:
+          name: migration table
+          command: |
+            yarn sequelize db:migrate
       - run:
           name: run test
           command: |

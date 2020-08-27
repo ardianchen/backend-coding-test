@@ -9,8 +9,10 @@ config:
     headers:
       x-auth: 'gGnyWtx21ztdIsxGG8CFxSPy7u'
 scenarios:
-  - name: "Search and buy"
+  - name: "Search and post"
     flow:
+      - get:
+          url: "/api/ride/1"
       - get:
           url: "/api/rides"
       - post:
