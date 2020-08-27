@@ -32,14 +32,14 @@ export const read = async (payload = {}) => {
     end: end
   }).pagination
   return {
-    msg: data.count > 0 ? 'found' : 'not found',
+    msg: 'found',
     res: data.rows,
     page: paging
   }
 }
 
 export const detail = async (payload = {}) => {
-  return { msg: 'success', res: await findOne({ id: payload.params.id }) !== null ? await findOne({ id: payload.params.id }) : {} }
+  return { msg: 'found', res: await findOne({ id: payload.params.id }) !== null ? await findOne({ id: payload.params.id }) : {} }
 }
 
 export const insert = async (payload = {}) => {

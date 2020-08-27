@@ -3,7 +3,7 @@ module.exports = {
   dialect: process.env.SQL_DIALECT || 'mysql',
   database: process.env.SQL_DATABASENAME || 'empatkali',
   username: process.env.SQL_USER || 'root',
-  password: process.env.SQL_PASSWORD || 'password',
+  password: process.env.SQL_PASSWORD || 'new-password',
   pool: {
     max: 5,
     min: 0,
