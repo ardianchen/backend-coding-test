@@ -15,8 +15,9 @@ jobs:
       - run:
           name: Install MySQL CLI; Import
           command: |
-            sudo apt-get install default-mysql-client
-            mysql -h 127.0.0.1 -u admin -password empatkali < sql-data/dummy.sql
+            mysql -u admin -p
+            password
+            empatkali < sql-data/dummy.sql
       - run:
           name: install dependecies
           command: |
