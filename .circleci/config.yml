@@ -3,7 +3,7 @@ jobs:
   run_tests:
     docker:
       - image: circleci/node:10
-      - image: circleci/mysql:8.0.4
+      - image: circleci/mariadb:bionic
         environment:
           - MYSQL_ROOT_PASSWORD: password
           - MYSQL_DATABASE: empatkali
@@ -16,7 +16,7 @@ jobs:
           name: Install MySQL CLI; Import
           command: |
             sudo apt-get install default-mysql-client
-            mysql -u admin -ppassword empatkali < sql-data/dummy.sql
+            sudo mysql -u admin -ppassword empatkali < sql-data/dummy.sql
       - run:
           name: install dependecies
           command: |
