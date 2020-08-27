@@ -16,7 +16,7 @@ jobs:
           command: |
             yarn install --save
       - run:
-          name: Install MySQL CLI; Import
+          name: migration table
           command: |
             yarn sequelize db:migrate
       - run:
