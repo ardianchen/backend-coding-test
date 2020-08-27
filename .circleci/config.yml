@@ -12,13 +12,13 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Install MySQL CLI; Import
-          command: |
-            yarn sequelize db:migrate
-      - run:
           name: install dependecies
           command: |
             yarn install --save
+      - run:
+          name: Install MySQL CLI; Import
+          command: |
+            yarn sequelize db:migrate
       - run:
           name: run test
           command: |
