@@ -11,11 +11,10 @@ jobs:
     working_directory: ~/my_repo
     steps:
       - checkout
-      # - run:
-      #     name: Install MySQL CLI; Import
-      #     command: |
-      #       sudo apt-get install default-mysql-client
-      #       sudo mysql -h 127.0.0.1 -u admin -ppassword empatkali < sql-data/dummy.sql
+      - run:
+          name: Install MySQL CLI; Import
+          command: |
+            yarn sequelize db:migrate
       - run:
           name: install dependecies
           command: |
